@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Bloom Valley Nursery</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div style="width:48px;height:48px;border-radius:50%;background:#FFF8F0;display:flex;align-items:center;justify-content:center;font-size:1.4rem;">🌿</div>
+        <h1 class="site-title">Bloom Valley Nursery</h1>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>About Bloom Valley Nursery</h1>
+
+        <div class="content-block">
+          <h2>Our Story</h2>
+          <p>Bloom Valley Nursery is a family-owned plant nursery dedicated to helping local gardeners and homeowners create thriving outdoor (and indoor) spaces. We specialize in high-quality plants, trees, shrubs, and gardening supplies while promoting sustainable growing practices.</p>
+          <p>Our goal is simple: make gardening accessible, enjoyable, and successful for everyone—from first-time plant parents to experienced green thumbs.</p>
+        </div>
+
+        <div class="content-block">
+          <h2>Hours of Operation</h2>
+          <ul class="hours-list">
+            <li><strong>Monday – Friday:</strong> 9:00 a.m. – 6:00 p.m.</li>
+            <li><strong>Saturday – Sunday:</strong> 10:00 a.m. – 5:00 p.m.</li>
+          </ul>
+          <p>We are closed on major holidays. Call ahead during severe weather.</p>
+        </div>
+
+        <div class="content-block">
+          <h2>Feedback &amp; Custom Orders</h2>
+          <p>Have a question, suggestion, or special request? We’d love to hear from you. Use the form below for feedback or to inquire about custom plant orders and landscape consultations.</p>
+
+          <form action="#" method="post">
+            <fieldset>
+              <legend>Your Information</legend>
+              <div class="form-group">
+                <label for="fullname">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="fullname" name="fullname" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Message Details</legend>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="feedback">General Feedback</option>
+                  <option value="custom">Custom Order Request</option>
+                  <option value="consultation">Landscape Consultation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message <span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+              </div>
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                <label for="newsletter">Also subscribe me to the seasonal newsletter</label>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Get seasonal tips and exclusive offers.</p>
+        <form class="newsletter-form" action="#" method="post">
+          <label for="email-about" class="visually-hidden" style="position:absolute;left:-9999px;">Email</label>
+          <input type="email" id="email-about" name="email" placeholder="Your email" required>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Pinterest">Pinterest</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <p class="copyright container">&copy; 2026 Bloom Valley Nursery. All rights reserved.</p>
+  </footer>
+</body>
+</html>
