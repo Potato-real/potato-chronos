@@ -1,10 +1,3 @@
-/* ========================================
-   Bloom Valley Nursery - main.js
-   Touchstone 4: Interactivity & Client-Side Data
-======================================== */
-
-// ---------- Data structures ----------
-// Array of product objects available in the gallery
 const products = [
   { id: "string-of-pearls", name: "String of Pearls", price: 22.99 },
   { id: "dwarf-lemon", name: "Dwarf Lemon Tree", price: 49.99 },
@@ -17,10 +10,10 @@ const products = [
   { id: "potting-mix", name: "Organic Potting Mix", price: 12.99 }
 ];
 
-// Wishlist array (objects) – loaded from localStorage
+
 let wishlist = [];
 
-// ---------- Wishlist functions ----------
+// wishlist 
 function loadWishlist() {
   const saved = localStorage.getItem("bvWishlist");
   if (saved) {
@@ -112,7 +105,7 @@ function updateWishlistUI() {
     listEl.appendChild(li);
   });
 
-  // Attach remove listeners
+ 
   const removeButtons = listEl.querySelectorAll(".btn-remove");
   removeButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -131,7 +124,7 @@ function showWishlistMessage(message) {
   }, 2500);
 }
 
-// ---------- Form validation functions ----------
+
 function showFieldError(fieldId, message) {
   const errorEl = document.getElementById(fieldId + "-error");
   const field = document.getElementById(fieldId);
@@ -217,7 +210,7 @@ function validateForm(event) {
   const messageOk = validateMessage();
 
   if (nameOk && emailOk && messageOk) {
-    // Save name to localStorage so it can be remembered next visit
+
     const nameValue = document.getElementById("name").value.trim();
     localStorage.setItem("bvContactName", nameValue);
 
@@ -226,9 +219,7 @@ function validateForm(event) {
       successEl.textContent = "Thank you! Your message has been sent.";
       successEl.style.display = "block";
     }
-
-    // Optionally reset the form after success
-    // document.getElementById("contact-form").reset();
+;
   }
 }
 
@@ -240,12 +231,12 @@ function loadSavedName() {
   }
 }
 
-// ---------- Initialize ----------
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Load wishlist on every page that has the UI
+
   loadWishlist();
 
-  // Attach Add to Wishlist buttons (gallery page)
+
   const addButtons = document.querySelectorAll(".btn-add-wishlist");
   addButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -254,18 +245,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Clear wishlist button
+
   const clearBtn = document.getElementById("clear-wishlist");
   if (clearBtn) {
     clearBtn.addEventListener("click", clearWishlist);
   }
 
-  // Form validation (about page)
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", validateForm);
 
-    // Live validation helpers
     const nameField = document.getElementById("name");
     const emailField = document.getElementById("email");
     const messageField = document.getElementById("message");
@@ -289,7 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Pre-fill name from localStorage
     loadSavedName();
   }
 });
