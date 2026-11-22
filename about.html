@@ -10,7 +10,7 @@
   <header>
     <div class="container header-inner">
       <div class="logo-area">
-        <div style="width:48px;height:48px;border-radius:50%;background:#FFF8F0;display:flex;align-items:center;justify-content:center;font-size:1.4rem;">🌿</div>
+        <div class="logo-mark" aria-hidden="true">🌿</div>
         <h1 class="site-title">Bloom Valley Nursery</h1>
       </div>
       <nav aria-label="Main navigation">
@@ -31,7 +31,7 @@
 
         <div class="content-block">
           <h2>Our Story</h2>
-          <p>Bloom Valley Nursery is a family-owned plant nursery dedicated to helping local gardeners and homeowners create thriving outdoor (and indoor) spaces. We specialize in high-quality plants, trees, shrubs, and gardening supplies while promoting sustainable growing practices.</p>
+          <p>Bloom Valley Nursery is a family-owned plant nursery dedicated to helping local gardeners and homeowners create thriving outdoor and indoor spaces. We specialize in high-quality plants, trees, shrubs, and gardening supplies while promoting sustainable growing practices.</p>
           <p>Our goal is simple: make gardening accessible, enjoyable, and successful for everyone—from first-time plant parents to experienced green thumbs.</p>
         </div>
 
@@ -46,18 +46,20 @@
 
         <div class="content-block">
           <h2>Feedback &amp; Custom Orders</h2>
-          <p>Have a question, suggestion, or special request? We’d love to hear from you. Use the form below for feedback or to inquire about custom plant orders and landscape consultations.</p>
+          <p>Have a question, suggestion, or special request? We would love to hear from you. Use the form below for feedback or to inquire about custom plant orders and landscape consultations.</p>
 
-          <form action="#" method="post">
+          <form id="contact-form" action="#" method="post" novalidate>
             <fieldset>
               <legend>Your Information</legend>
               <div class="form-group">
-                <label for="fullname">Full Name <span aria-hidden="true">*</span></label>
-                <input type="text" id="fullname" name="fullname" required autocomplete="name">
+                <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+                <p class="field-error" id="name-error" role="alert"></p>
               </div>
               <div class="form-group">
                 <label for="email">Email Address <span aria-hidden="true">*</span></label>
                 <input type="email" id="email" name="email" required autocomplete="email">
+                <p class="field-error" id="email-error" role="alert"></p>
               </div>
               <div class="form-group">
                 <label for="phone">Phone (optional)</label>
@@ -79,6 +81,7 @@
               <div class="form-group">
                 <label for="message">Your Message <span aria-hidden="true">*</span></label>
                 <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+                <p class="field-error" id="message-error" role="alert"></p>
               </div>
               <div class="form-group checkbox-group">
                 <input type="checkbox" id="newsletter" name="newsletter" value="yes">
@@ -87,6 +90,7 @@
             </fieldset>
 
             <button type="submit" class="btn">Send Message</button>
+            <p id="form-success" role="status"></p>
           </form>
         </div>
       </div>
@@ -126,5 +130,7 @@
     </div>
     <p class="copyright container">&copy; 2026 Bloom Valley Nursery. All rights reserved.</p>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

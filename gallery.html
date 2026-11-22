@@ -10,7 +10,7 @@
   <header>
     <div class="container header-inner">
       <div class="logo-area">
-        <div style="width:48px;height:48px;border-radius:50%;background:#FFF8F0;display:flex;align-items:center;justify-content:center;font-size:1.4rem;">🌿</div>
+        <div class="logo-mark" aria-hidden="true">🌿</div>
         <h1 class="site-title">Bloom Valley Nursery</h1>
       </div>
       <nav aria-label="Main navigation">
@@ -27,109 +27,103 @@
   <main>
     <section class="section">
       <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
+        <div class="gallery-header">
           <h1>Our Plants &amp; Supplies</h1>
           <a href="#" class="btn">View Shopping Cart</a>
         </div>
-        <p class="mb-2">Browse our current selection. Click “Add to Cart” to start your order. Local pickup and delivery available.</p>
+        <p class="mb-2">Browse our current selection. Click “Add to Wishlist” to save plants you like. Your wishlist is remembered even after you close the browser.</p>
+
+        <!-- Wishlist Panel (Interactive Feature) -->
+        <div class="wishlist-panel" id="wishlist-panel">
+          <div class="wishlist-header">
+            <h2>My Wishlist <span class="wishlist-count-badge" id="wishlist-count">0</span></h2>
+            <button type="button" class="btn btn-secondary" id="clear-wishlist">Clear Wishlist</button>
+          </div>
+          <p id="wishlist-empty">Your wishlist is empty. Add plants below to save them for later.</p>
+          <ul id="wishlist-list"></ul>
+          <p id="wishlist-message" role="status" aria-live="polite"></p>
+        </div>
 
         <div class="product-grid">
-          <!-- Item 1 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🪴</div>
+            <div class="product-visual" aria-hidden="true">🪴</div>
             <div class="product-info">
               <h3>String of Pearls</h3>
               <p>Trailing succulent. Bright indirect light. Water sparingly.</p>
               <p class="price">$22.99</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="string-of-pearls">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 2 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🌳</div>
+            <div class="product-visual" aria-hidden="true">🌳</div>
             <div class="product-info">
               <h3>Dwarf Lemon Tree</h3>
               <p>Container-ready citrus. Full sun. Fragrant blossoms.</p>
               <p class="price">$49.99</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="dwarf-lemon">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 3 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🌸</div>
+            <div class="product-visual" aria-hidden="true">🌸</div>
             <div class="product-info">
               <h3>Lavender Bundle (3)</h3>
               <p>English, French &amp; Spanish varieties. Great for borders.</p>
               <p class="price">$18.50</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="lavender-bundle">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 4 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🌵</div>
+            <div class="product-visual" aria-hidden="true">🌵</div>
             <div class="product-info">
               <h3>Assorted Succulents</h3>
-              <p>Set of 5 mixed varieties. Low-maintenance &amp; colorful.</p>
+              <p>Set of 5 mixed varieties. Low-maintenance and colorful.</p>
               <p class="price">$15.00</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="succulents">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 5 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🌿</div>
+            <div class="product-visual" aria-hidden="true">🌿</div>
             <div class="product-info">
               <h3>Herb Starter Kit</h3>
-              <p>Basil, rosemary, thyme &amp; mint. Includes pots &amp; soil.</p>
+              <p>Basil, rosemary, thyme &amp; mint. Includes pots and soil.</p>
               <p class="price">$27.99</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="herb-kit">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 6 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🌺</div>
+            <div class="product-visual" aria-hidden="true">🌺</div>
             <div class="product-info">
               <h3>Hibiscus (Potted)</h3>
               <p>Tropical blooms in red or yellow. Needs full sun.</p>
               <p class="price">$34.00</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="hibiscus">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 7 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🪴</div>
+            <div class="product-visual" aria-hidden="true">🪴</div>
             <div class="product-info">
               <h3>Monstera Deliciosa</h3>
               <p>Iconic split leaves. Fast grower in bright, indirect light.</p>
               <p class="price">$39.99</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="monstera">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 8 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">🌲</div>
+            <div class="product-visual" aria-hidden="true">🌲</div>
             <div class="product-info">
               <h3>Japanese Maple (Young)</h3>
               <p>Elegant red foliage. Partial shade preferred.</p>
               <p class="price">$65.00</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="japanese-maple">Add to Wishlist</button>
             </div>
           </article>
-
-          <!-- Item 9 -->
           <article class="product-card">
-            <div style="height:180px;background:#e8ddd0;display:flex;align-items:center;justify-content:center;font-size:3rem;">📦</div>
+            <div class="product-visual" aria-hidden="true">📦</div>
             <div class="product-info">
               <h3>Organic Potting Mix</h3>
               <p>20-lb bag. Enriched with compost for healthy roots.</p>
               <p class="price">$12.99</p>
-              <button class="btn" type="button">Add to Cart</button>
+              <button class="btn btn-add-wishlist" type="button" data-id="potting-mix">Add to Wishlist</button>
             </div>
           </article>
         </div>
@@ -170,5 +164,7 @@
     </div>
     <p class="copyright container">&copy; 2026 Bloom Valley Nursery. All rights reserved.</p>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
